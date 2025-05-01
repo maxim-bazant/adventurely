@@ -10,13 +10,13 @@
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+        padding-bottom: 100px;
         gap: 50px;
-        min-height: 100%;
 
         @media (max-width: 1200px) {
             flex-direction: column;
             margin-inline: 0;
-            gap: 0;
+            gap: 50px;
         }
 
         h1 {
