@@ -58,5 +58,5 @@ button:focus {
 }
 
 .css-j7qwjs {
-    display: none;
+    display: none !important;
 }
