@@ -3,9 +3,16 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
+  base: "/adventurely",
   server: {
     host: "0.0.0.0",
     port: 5173,
-    
+    proxy: {
+      "/api": {
+        target: "https://adventurely-backend.onrender.com",
+        changeOrigin: true,
+        secure: false, // <--- disables SSL verification
+      },
+    },
   },
 });
