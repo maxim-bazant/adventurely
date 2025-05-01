@@ -16,7 +16,7 @@ const Map = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const res = await axios.get(`/api/trips/countries/${user?.sub}`);
+            const res = await axios.get(`https://adventurely-backend.onrender.com/api/trips/countries/${user?.sub}`);
             setVisitedCountries(res.data);
         };
         fetchData();
