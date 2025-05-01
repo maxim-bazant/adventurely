@@ -16,6 +16,8 @@ root.render(
     authorizationParams={{
       redirect_uri: auth0Config.redirectUri,
     }}
+    cacheLocation={auth0Config.cacheLocation}
+    useRefreshTokens={auth0Config.useRefreshTokens}
   >
     <RouterProvider router={router} />
   </Auth0Provider>
