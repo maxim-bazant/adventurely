@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import styles from './WorldMap.module.scss';
+import styles from "./Worldmap.module.scss";
 
 interface WorldMapProps {
     visitedCountries: string[];
