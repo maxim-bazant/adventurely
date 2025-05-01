@@ -15,7 +15,7 @@ const useUserStore = create<UserStore>((set) => ({
   fetchUsers: async () => {
     set({ isLoadingUsers: true });
     try {
-      const response = await axios.get("/api/auth0/users");
+      const response = await axios.get("https://adventurely-backend.onrender.com/api/auth0/users");
       set((state) => ({ ...state, users: response.data.users }));
     } catch (error) {
       console.error("❌ Failed to fetch users:", error);
@@ -27,7 +27,7 @@ const useUserStore = create<UserStore>((set) => ({
   getUser: async (userID: string) => {
     set({ isLoadingUsers: true });
     try {
-      const response = await axios.get(`/api/auth0/users/${userID}`);
+      const response = await axios.get(`https://adventurely-backend.onrender.com/api/auth0/users/${userID}`);
       set((state) => ({ ...state, users: [response.data.users] }));
     } catch (error) {
       console.error("❌ Failed to fetch user:", error);

@@ -25,7 +25,7 @@ const useTripStore = create<TripStore>((set) => ({
         trip.moreInfo.map(async (info) => {
           if (info.type === "Image" && info.content instanceof FormData) {
             try {
-              const imageUrl = await axios.post("/api/bucket/upload", info.content, {
+              const imageUrl = await axios.post("https://adventurely-backend.onrender.com/api/bucket/upload", info.content, {
                 headers: { "Content-Type": "multipart/form-data" },
               });
               return { ...info, content: imageUrl.data.imageUrl }; // Update content with S3 URL
@@ -40,14 +40,14 @@ const useTripStore = create<TripStore>((set) => ({
     
 
       // MAIN IMAGE UPLOAD TO S3
-      const response = await axios.post("/api/bucket/upload", trip.imageFormData, {
+      const response = await axios.post("https://adventurely-backend.onrender.com/api/bucket/upload", trip.imageFormData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       
       // MongoDB ready Trip with image URL
       const finalTrip: TripType = { ...trip, imageUrl: response.data.imageUrl, moreInfo: updatedMoreInfo };
       
-      const res = await axios.post("/api/trips", finalTrip, {
+      const res = await axios.post("https://adventurely-backend.onrender.com/api/trips", finalTrip, {
         headers: { "Content-Type": "application/json" },
       });
 
@@ -67,7 +67,7 @@ const useTripStore = create<TripStore>((set) => ({
   getTrips: async () => {
     set({ isLoading: true });
     try {
-      const res = await axios.get("/api/trips");
+      const res = await axios.get("https://adventurely-backend.onrender.com/api/trips");
       set({ trips: res.data });
     } catch (error) {
       console.error("❌ Failed to fetch trips:", error);
@@ -79,7 +79,7 @@ const useTripStore = create<TripStore>((set) => ({
   fetchTripsForUser: async (userID) => {
     set({ isLoading: true });
     try {
-      const res = await axios.get(`/api/trips/${userID}`);
+      const res = await axios.get(`https://adventurely-backend.onrender.com/api/trips/${userID}`);
       set({ trips: res.data });
     } catch (error) {
       console.error("❌ Failed to fetch trips:", error);
@@ -97,7 +97,7 @@ const useTripStore = create<TripStore>((set) => ({
         trip.moreInfo.map(async (info) => {
           if (info.type === "Image") {
             try {
-              await axios.delete("/api/bucket/delete", { data: { imageUrl: info.content } });
+              await axios.delete("https://adventurely-backend.onrender.com/api/bucket/delete", { data: { imageUrl: info.content } });
             } catch (error) {
               console.error(`Error deleting image for ID ${info._id}:`, error);
             }
@@ -106,7 +106,7 @@ const useTripStore = create<TripStore>((set) => ({
       );
 
       if (trip.imageUrl) {
-        await axios.delete("/api/bucket/delete", { data: { imageUrl: trip.imageUrl } });
+        await axios.delete("https://adventurely-backend.onrender.com/api/bucket/delete", { data: { imageUrl: trip.imageUrl } });
       }
       await axios.delete(`/api/trips/${trip._id}`);
       set((state) => ({
@@ -126,13 +126,13 @@ const useTripStore = create<TripStore>((set) => ({
 
       if (newTripData.imageFormData.get("file")) {
         // Upload new image
-        const response = await axios.post("/api/bucket/upload", newTripData.imageFormData, {
+        const response = await axios.post("https://adventurely-backend.onrender.com/api/bucket/upload", newTripData.imageFormData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         uploadedImageUrl = response.data.imageUrl;
 
         // Delete old image
-        await axios.delete("/api/bucket/delete", { data: { imageUrl: currentImageUrl } });
+        await axios.delete("https://adventurely-backend.onrender.com/api/bucket/delete", { data: { imageUrl: currentImageUrl } });
       }
 
       
@@ -146,7 +146,7 @@ const useTripStore = create<TripStore>((set) => ({
           try {
             // Delete image for removed info
             if (info.type === "Image") {
-              await axios.delete("/api/bucket/delete", { data: { imageUrl: info.content } });
+              await axios.delete("https://adventurely-backend.onrender.com/api/bucket/delete", { data: { imageUrl: info.content } });
             }
           } catch (error) {
             console.error(`Error deleting image for ID ${info._id}:`, error);
@@ -159,7 +159,7 @@ const useTripStore = create<TripStore>((set) => ({
         newTripData.moreInfo.map(async (info) => {
           if (info.type === "Image" && info.content instanceof FormData) {
             try {
-              const response = await axios.post("/api/bucket/upload", info.content, {
+              const response = await axios.post("https://adventurely-backend.onrender.com/api/bucket/upload", info.content, {
                 headers: { "Content-Type": "multipart/form-data" },
               });
               info.content = response.data.imageUrl;
@@ -172,7 +172,7 @@ const useTripStore = create<TripStore>((set) => ({
 
 
       // Update trip in database
-      await axios.put(`/api/trips/${tripID}`, {
+      await axios.put(`https://adventurely-backend.onrender.com/api/trips/${tripID}`, {
         title: newTripData.title,
         description: newTripData.description,
         price: newTripData.price,
