@@ -60,3 +60,10 @@ button:focus {
 .css-j7qwjs {
     display: none !important;
 }
+
+
+@media (max-width: 768px) {
+    body {
+        margin-bottom: 50px;
+    }
+}
