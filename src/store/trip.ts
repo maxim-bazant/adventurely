@@ -108,7 +108,7 @@ const useTripStore = create<TripStore>((set) => ({
       if (trip.imageUrl) {
         await axios.delete("https://adventurely-backend.onrender.com/api/bucket/delete", { data: { imageUrl: trip.imageUrl } });
       }
-      await axios.delete(`/api/trips/${trip._id}`);
+      await axios.delete(`https://adventurely-backend.onrender.com/api/trips/${trip._id}`);
       set((state) => ({
         trips: state.trips.filter((t) => t._id !== trip._id),
       }));
