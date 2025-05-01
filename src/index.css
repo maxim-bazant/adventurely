@@ -1,0 +1,58 @@
+@import "./styles/variables.css";
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* General button style */
+button {
+    /* background-color: var(--button-color); Green color */
+    /* color: white; White text */
+    background-color: white;
+    color: var(--text-color);
+    border: var(--text-color) 2px solid;
+    padding: 10px 20px; /* Adjust padding for button size */
+    font-size: 1.5rem; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    outline: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* For important buttons */
+.fillBtn {
+    background-color: var(--button-color);
+    color: white;
+}
+
+.fillBtn:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: var(--button-hover-color); /* Darker shade for hover */
+    color: white;
+}
+
+/* Button active effect */
+button:active {
+    background-color: var(--button-hover-color); /* Even darker shade when button is clicked */
+    
+}
+
+/* Optional: Focus effect for accessibility */
+button:focus {
+    outline: 2px solid var(--button-hover-color); /* Green outline for focus */
+    outline-offset: 2px; /* Slightly offset the outline */
+}

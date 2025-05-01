@@ -1,0 +1,78 @@
+.mainContainer {
+    position: relative;
+    width: 100%;
+    height: 100%; // Ensure the container fills available space
+
+    .mapContainer {
+        width: 100%;
+        height: 100%;
+        overflow: auto; // Allow scrolling both horizontally and vertically
+        display: flex;
+        justify-content: center; // Centers the map
+        align-items: center; // Vertically center the map
+        scrollbar-width: thin; // For Firefox
+        scrollbar-color: #888 #f0f0f0; // Custom colors for scrollbar
+
+        svg {
+            
+            min-height: 100%; // Allow height to stretch on zoom
+            display: block;
+            transform-origin: top left; // Keep zoom centered
+            transition: transform 0.2s ease-in-out; // Smooth zoom transition
+            width: auto;
+            height: 100%; // Ensure the SVG expands with scaling
+
+            path {
+                fill: #dddddd; // Light gray
+                stroke: #fff; // White border
+                stroke-width: 1;
+                cursor: pointer;
+                transition: fill 0.2s, stroke 0.2s;
+            }
+
+            path.visited {
+                fill: var(--text-color); // Visited countries color
+            }
+        }
+    }
+
+    .zoomControls {
+        display: flex;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        flex-direction: column;
+        gap: 5px;
+
+        @media (max-width: 768px) {
+            flex-direction: row;
+            position: relative;
+            margin-left: 10px;
+            
+        }
+
+        button {
+            padding-inline: 10px;
+            padding-block: 0;
+            cursor: pointer;
+        }
+    }
+}
+
+// Scrollbar styles for WebKit browsers (Chrome, Edge, Safari)
+.mainContainer::-webkit-scrollbar {
+    height: 8px; // Adjust thickness
+}
+
+.mainContainer::-webkit-scrollbar-track {
+    background: #f0f0f0; // Light gray track
+}
+
+.mainContainer::-webkit-scrollbar-thumb {
+    background: #888; // Darker gray scrollbar
+    border-radius: 4px;
+}
+
+.mainContainer::-webkit-scrollbar-thumb:hover {
+    background: #555; // Darker on hover
+}

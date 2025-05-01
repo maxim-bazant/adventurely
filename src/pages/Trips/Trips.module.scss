@@ -1,0 +1,17 @@
+@import "../../styles/variables.css";
+
+.container {
+    margin-bottom: 50px;
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+
+        h1 {
+            margin: 0;
+        }
+    }
+
+}

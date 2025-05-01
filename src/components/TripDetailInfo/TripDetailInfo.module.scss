@@ -1,0 +1,201 @@
+.tripInfo {
+    padding-bottom: 20px;
+
+    .tripDetailContainer {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 20px;
+        margin-inline: 50px;
+
+        @media (max-width: 1200px) {
+            flex-direction: column;
+            margin-inline: 10px;
+            margin-top: 20px;
+        }
+
+        .imageContainer {
+            display: flex;
+            position: relative;
+            width: 500px;
+            max-width: 60%;
+            max-height: 30%;
+            margin-right: 30px;
+
+            @media (max-width: 1200px) {
+                width: 100%;
+                max-width: 100%;
+                max-height: 400px;
+                margin-bottom: 20px;
+                margin: 0;
+            }
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+            .publicIcon {
+                position: absolute; 
+                bottom: 0;
+                right: 0;
+                margin: 15px;
+                margin-bottom: 10px;
+                padding-inline: 5px;
+                border: white 3px solid;
+                border-radius: 10px;
+                background-color: white;
+                color: black;
+    
+                svg {
+                    display: flex;
+                    justify-content: center;
+                }
+            };
+    
+            .public {
+                background-color: var(--text-color);
+                color: white;
+                border: var(--text-color) 3px solid;
+            }
+        }
+
+
+        .tripDetail {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            h1 {
+                text-decoration: underline;
+                text-decoration-color: var(--text-color);
+                text-underline-offset: 3px;
+            }
+
+            .description {
+                font-size: 1.1rem;
+                max-width: 600px;
+                display: block;
+            }
+            .date {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                font-size: 1.1rem;
+                font-weight: 500;
+                gap: 10px;
+            }
+
+            .price {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                font-size: 1.1rem;
+                font-weight: 500;
+                gap: 15px;
+            }
+
+            .rating {
+                margin-top: 10px;
+            }
+
+        }
+    }
+    .countriesContainer {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        margin-top: 10px;
+    
+        svg {
+            margin-top: 10px;
+            margin-left: 50px;
+
+            @media (max-width: 1200px) {
+                margin-left: 10px;
+            }
+        }
+    
+        .countries {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 20px;
+            column-gap: 7px;
+            flex-wrap: wrap;
+    
+            p {
+                font-size: 1.2rem;
+                padding: 5px 10px;
+                border: var(--text-color) 2px solid;
+                border-radius: 10px;
+                background-color: var(--text-color);
+                color: white;
+            }
+        }
+    }
+}
+
+.moreInfoContainer {
+    max-width: 900px;
+    margin-left: 50px;
+
+
+    @media (max-width: 1200px) {
+        margin-left: 0;
+    }
+
+    .moreInfo {
+        display: flex;
+        flex-direction: column;
+        
+
+        .moreInfoTitle {
+            display: flex;
+            width: 100%;
+
+            h1 {
+                margin-block: 10px;
+                margin-top: 30px;
+                text-decoration: underline;
+                text-decoration-color: var(--text-color);
+                text-underline-offset: 3px;
+            }
+        }
+
+
+        .moreInfoText {
+            width: 100%;
+            border-left: 2px solid var(--text-color);
+            margin-block: 15px;
+            margin-left: 2.5%;
+
+            @media (max-width: 1200px) {
+                margin-left: 0;
+            }
+
+            p {
+                font-size: 1.2rem;
+                margin: 0;
+                padding-left: 10px;
+            }
+        }
+
+        img {
+            max-width: 60%;
+            max-height: 25vmax;
+            object-fit: cover;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 5%;
+
+            @media (max-width: 750px) {
+                width: 100%;
+                max-width: 100%;
+                max-height: 400px;
+                margin-left: 0;
+            }
+        }
+    }
+
+}

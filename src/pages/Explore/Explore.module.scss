@@ -1,0 +1,15 @@
+@import "../../styles/variables.css";
+
+.mainContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+
+    img {
+        width: 350px;
+        height: auto;
+    }
+}

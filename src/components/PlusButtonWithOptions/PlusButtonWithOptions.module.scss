@@ -1,0 +1,60 @@
+@import "../../styles/variables.css";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+    .plusButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      padding: 10px;
+      transition: transform 0.2s;
+      border: 3px solid var(--text-color);
+      background-color: var(--text-color);
+      color: white;
+      cursor: pointer;
+    }
+  
+    .optionsBox {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      background: white;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+      :hover {
+        background-color: rgb(240, 240, 240);
+      }
+  
+      .option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 35px;
+        flex: 1; // Makes all options grow equally
+  
+        .icon {
+          font-size: 2rem;
+          color: var(--text-color);
+        }
+  
+        p {
+          width: 100%; // Stretch button to match the widest one
+          font-size: 1.4rem;
+          margin: 0;
+          border-radius: 4px;
+          cursor: pointer;
+          text-align: center;
+          white-space: nowrap; // Prevents text from wrapping
+        }
+      }
+    }
+  }
+  

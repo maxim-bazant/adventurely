@@ -1,0 +1,107 @@
+// ProfileSettings.module.scss
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px auto;
+    gap: 20px;
+
+    .saveBtn {
+        position: relative;
+        right: 40px;
+        top: 40px;
+    }
+
+    .infoContainer {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        padding: 30px 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        gap: 50px;
+
+        @media (max-width: 1000px) {
+            flex-direction: column;
+            gap: 20px;
+            padding: 30px 40px;
+        }
+
+        .profileImageContainer {
+            $img-size: 120px;
+
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            flex-direction: column;
+            width: auto;
+            margin-right: 20px;
+            gap: 20px;
+
+            img {
+                width: $img-size;
+                height: $img-size;
+                border-radius: 50%;
+                margin-bottom: 10px;
+            }
+
+            ;
+
+            button {
+                font-size: 1rem;
+            }
+        }
+
+        .profileInfo {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 2fr)); // Responsive grid with flexible columns
+            padding: 20px;
+            align-items: start;
+            border-radius: 10px;
+            row-gap: 20px;
+            column-gap: 20px; // Reduced gap to ensure better fitting on smaller screens
+          
+            // Optional: For smaller screen devices
+            @media (max-width: 768px) {
+              column-gap: 10px; // Adjust column gap on smaller screens
+            }
+          }
+          
+
+          .infoColumn {
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        
+            &:last-child {
+                margin-bottom: 0;
+            }
+        
+            .label {
+                font-size: 1rem;
+                font-weight: bold;
+                color: rgb(149, 149, 149);
+            }
+        
+            .value {
+                word-break: normal;  // Allow breaking at natural word boundaries
+                overflow-wrap: break-word;  // Ensure words break at space or hyphen
+                word-wrap: break-word;  // Legacy support for older browsers
+                font-size: 1.1rem;  // Adjust font size as needed
+            }
+        }
+        
+            
+        }
+    }
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.logOutBtn {
+    margin-block: 20px;
+}

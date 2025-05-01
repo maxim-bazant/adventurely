@@ -1,0 +1,25 @@
+.logo {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    align-items: center;
+    gap: 10px;
+
+    img {
+        width: 50px;
+        height: auto;
+        vertical-align: middle;
+
+        @media (max-width: 1080px) {
+            width: 30px;
+        }
+    }
+
+    p {
+        margin: 0;
+    }
+}
