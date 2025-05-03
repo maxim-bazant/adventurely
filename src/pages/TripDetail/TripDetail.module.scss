@@ -24,25 +24,21 @@
         justify-content: space-between;
         margin-bottom: 10px;
 
-        @media (max-width: 1000px) {
-            justify-content: end;
-        }
-
         .editDelete {
             display: flex;
             flex-direction: row;
             justify-content: right;
             gap: 5px;
             margin-right: 20px;
-
-            @media (max-width: 768px) {
-                display: none;
-            }
         }
     }
 
     .tripDetailInfoContainer {
         margin-top: 50px;
+
+        @media (max-width: 768px) {
+            margin-top: 0;
+        }
     }
 }
 

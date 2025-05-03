@@ -10,6 +10,12 @@ a {
     text-decoration: none;
 }
 
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
 /* General button style */
 button {
     /* background-color: var(--button-color); Green color */

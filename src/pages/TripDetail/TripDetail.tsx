@@ -56,8 +56,7 @@ const TripDetailPage = () => {
         // Display the trip details
         <div>
           <div className={styles.actionButtons}>
-            <button className={styles.goBackButton} onClick={handleGoBack}>Go Back</button>
-
+            <DashboardHeader title="" button={{ title: "Go Back", onClick: handleGoBack }} />
             {/* Edit and delete buttons (hide when not the owner of the trip) */}
             <div className={styles.editDelete}>
               <EditButton size={35} onClick={() => handleEditTrip(trip._id!)} />

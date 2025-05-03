@@ -25,7 +25,7 @@ const EditTrip = () => {
     return (
         ( isLoading && <Loader message="Editing your trip..."/> )||
         <div>
-            <DashboardHeader title="Editing Your Trip" button={{ title: "Go Back", onClick: () => navigate(-1)}}/>
+            <DashboardHeader title="Editing Your Trip" button={{ title: "Back", onClick: () => navigate(-1)}}/>
             <TripForm initialData={trip} onSubmit={handleSubmit} />
         </div>
     );

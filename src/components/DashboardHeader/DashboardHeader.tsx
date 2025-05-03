@@ -6,6 +6,7 @@ interface DashboardHeaderProps {
     button?: {
         title: string;
         onClick: () => void;
+        hideOnMobile?: boolean;
     }
 }
 
@@ -14,7 +15,7 @@ const DashboardHeader = ({ title, button }: DashboardHeaderProps) => {
         <div className={styles.header}>
             <h1>{ title }</h1>
             {button && (
-                <button onClick={() => button.onClick()}>{button.title}</button>
+                <button className={button.hideOnMobile ? "hideOnMobile": ""} onClick={() => button.onClick()}>{button.title}</button>
             )}
         </div>
     );

@@ -4,9 +4,21 @@
     justify-content: space-between;
     align-items: center;
 
+    h1 {
+        margin: 0;
+    }
+
     button {
         @media (max-width: 768px) {
-            display: none;
+            font-size: 1.2rem;
+            padding: 7px 15px;
+        }
+
+        .hideOnMobile {
+            @media (max-width: 768px) {
+                display: none;
+            }
         }
     }
+        
 }
