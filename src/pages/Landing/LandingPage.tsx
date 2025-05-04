@@ -25,7 +25,7 @@ const LandingPage = () => {
   }
 
   return ( 
-    <div className={styles.landingContainer}>
+    <div className={styles.landingContainer} style={{ height: `${window.innerHeight}px` }}>
       <div className={styles.left}>
         <Logo />
         <div className={styles.textContainer}>
