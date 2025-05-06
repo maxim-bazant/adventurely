@@ -6,6 +6,7 @@ import ExploreCard from '../../components/ExploreCard/ExploreCard';
 import CardGrid from '../../components/CardGrid/CardGrid';
 import useTripStore from '../../store/trip';
 import { useAuth0 } from '@auth0/auth0-react';
+import DashboardHeader from '../../components/DashboardHeader/DashboardHeader';
 
 
 const Explore = () => {
@@ -30,6 +31,7 @@ const Explore = () => {
     return (
         ((isLoadingUsers || isLoading) && <Loader message="Loading trips to explore" />) ||
         <div className={styles.mainContainer}>
+            <DashboardHeader title='Explore' />
             <CardGrid>
                 { publicTrips().map((trip) => {
                     return (
