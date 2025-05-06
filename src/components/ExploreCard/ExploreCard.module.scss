@@ -22,7 +22,8 @@ $cardHeight: 400px;
 
     // Media query for card width adjustment
     @media (max-width: 768px) {
-        width: 300px;
+        transform: scale(0.9) !important; // to overwrite the 
+        margin: -15px !important; // to fix the gap made by the scale transformation
     }
 
     .profile {
