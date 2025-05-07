@@ -36,18 +36,7 @@ const LandingPage = () => {
           <h1>Adventurely</h1>
           <p>Plan, Travel, Share</p>
           <div className={styles.landingButtons}>
-            <button onClick={() => loginWithRedirect()}>Log In</button>
-            <button
-              onClick={() =>
-                loginWithRedirect({
-                  authorizationParams: {
-                    screen_hint: "signup",
-                  },
-                })
-              }
-            >
-              Sign up
-            </button>
+            <button onClick={() => loginWithRedirect()}>Let's go!</button>
           </div>
 
         </div>
